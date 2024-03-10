@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF8"?>
+<project name="PruebaAnt" default="compile" basedir=".">
+
+	<target name="compile" description="Compila el codigo de nuestro proyecto java">
+		<mkdir dir="build"/>
+		<javac srcdir="src" destdir="build" source="1.8" target="1.8" includeantruntime="false"/>
+	</target>
+
+	<target name="run" depends="compile" description="Ejecucion del proyecto java">
+		<java fork="true" classname="HolaMundo">
+			<classpath>
+				<path location="build"/>
+			</classpath>
+		</java>
+		
+	</target>
+	<target name="delete" description="Borrar los archivos .class">
+		<delete dir="build"/>
+	</target>
+</project>
